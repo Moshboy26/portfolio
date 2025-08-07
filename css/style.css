@@ -23,10 +23,12 @@ header.home-section {
 }
 
 header .overlay {
-    background-color: rgba(0, 0, 0, 0.669);
-    padding: 50px;
+       background-color: rgba(0, 0, 0, 0.669);
+    padding: 30px 20px;
     text-align: center;
     border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
 }
 
 section {
@@ -61,15 +63,17 @@ h2 {
 
 
 .project-card {
-    background: #fff;
+       background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     overflow: hidden;
     transition: transform 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 .project-card:hover {
@@ -156,4 +160,39 @@ footer {
     padding: 20px;
     background: #222;
     color: #fff;
+}
+@media (max-width: 768px) {
+      header.home-section {
+    background-position: center center;
+    background-size: cover; /* or try '100% auto' */
+    background-attachment: scroll; /* remove parallax effect for smoother mobile experience */
+    
+  }
+    header .overlay {
+        padding: 20px 15px;
+    }
+
+    .projects ul {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .skills ul {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img,
+    .project-iframe {
+        height: 180px;
+    }
+
+    .project-card p {
+        font-size: 15px;
+    }
+}
+@media (min-width: 600px) and (max-width: 767px) {
+  .projects ul {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 }
