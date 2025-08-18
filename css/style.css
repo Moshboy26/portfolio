@@ -285,16 +285,13 @@ footer {
         justify-items: center;
     }
 }
-@media (max-width: 768px) {
-    .contact div {
-        flex-direction: column;   /* force vertical stack */
-        align-items: center ;
-        gap: 2px ;                 /* very small gap */
-        margin-top: 10px ; 
-    }
-    
+.contact div {
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    align-items: flex-start; /* move items to the left */
+    gap: 2px;
+    margin-top: 10px;}
     .contact div p {
         text-align: center;
         margin: 0%;
     }
-}
