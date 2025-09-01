@@ -37,24 +37,49 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Contact form validation
+
+// Contact form validation and sending
 const form = document.getElementById('contact-form');
-form.addEventListener('submit', function(e){
+
+form.addEventListener('submit', async function(e){
     e.preventDefault();
+
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
+
     if(name === "" || email === "" || message === ""){
         alert("Please fill all fields");
         return;
     }
-    alert("Message sent successfully!");
-    form.reset();
+
+    const formData = { name, email, message };
+
+    try {
+        const response = await fetch('/api/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if(result.status === 'success'){
+            alert('Message sent successfully!');
+            form.reset();
+        } else {
+            alert('Error sending message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error sending message. Please try again.');
+    }
 });
+
 
 // Animate skill bars on scroll
 const skillBars = document.querySelectorAll('.skill-bar');
-const skillValues = {html:90, uiux:80, figma:85, responsive:75};
+const skillValues = {html:80, uiux:70, figma:80, responsive:100, playwright:60, qa:50};
 
 window.addEventListener('scroll', () => {
     skillBars.forEach(bar => {
