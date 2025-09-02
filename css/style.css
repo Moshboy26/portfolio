@@ -148,6 +148,7 @@ h2 {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
+    align-self:start;
 }
 
 .project-card:hover {
@@ -178,7 +179,7 @@ h2 {
 }
 
 .project-card p.expanded {
-    max-height: 300px;
+    max-height: 1000px;
 }
 
 .toggle-btn {
