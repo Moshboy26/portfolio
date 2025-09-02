@@ -261,9 +261,27 @@ footer {
         background-size: cover;
         background-attachment: scroll;
     }
-    header .overlay {
+    header .overlay {max-width: 90%; margin: auto;
         padding: 20px 15px;
     }
+     header .overlay h1 {
+        font-size: 25px;
+    }
+    header .overlay p {
+        font-size: 16px;
+    }
+    section {max-width: 95%; margin: auto;
+    }
+    nav.navbar ul {
+        flex-wrap: wrap; /* allow links to break into two lines if needed */
+    }
+    nav.navbar ul li {
+        margin: 5px 8px;
+    }
+    nav.navbar ul li a {
+        padding: 10px 0;
+    }
+
     .projects ul {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -295,3 +313,74 @@ footer {
         text-align: center;
         margin: 0%;
     }
+
+/* Extra small devices - 320px fix */
+@media (max-width: 400px) {
+    body {
+        font-size: 14px; /* smaller base font */
+    }
+
+    header .overlay {max-width: 90%; margin: auto;
+        padding: 15px 10px;
+        width: 95%;
+    }
+ header .overlay h1 {
+        font-size: 20px;
+    }
+    header .overlay p {
+        font-size: 14px;
+    }
+    nav.navbar ul {
+        flex-wrap: wrap; /* allow links to break into two lines if needed */
+    }
+    nav.navbar ul li {
+        margin: 5px 8px;
+    }
+    nav.navbar ul li a {
+        font-size: 13px;
+        padding: 10px 0;
+    }
+
+    section {max-width: 90%; margin: auto;
+        padding: 30px 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .about p, .contact p {
+        font-size: 15px;
+    }
+
+    .projects ul{
+        grid-template-columns: 1fr; /* single column */
+        gap: 15px;
+    }
+.skills ul {
+        grid-template-columns: 1fr;
+    gap: 15px;}
+    .project-card img,
+    .project-iframe {
+        height: 140px; /* reduce card image height */
+    }
+
+    .project-card h3 {
+        font-size: 16px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+        margin: 3px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
